@@ -1,13 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Route, Routes, Switch } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Login } from './login/login';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="login" element={<Login />} />
+      {/* <Route path="invoices" element={<Invoices />} /> */}
+    </Routes>
+  </BrowserRouter>,
   </React.StrictMode>
 );
 
